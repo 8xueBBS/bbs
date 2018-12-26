@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 98223
-  Date: 2018/12/23
-  Time: 17:10
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="../../statics/css/layui.css">
@@ -15,7 +8,10 @@
         <li class="layui-nav-item layui-this layui-unselect" id="a"><a href="">BBS论坛</a></li>
         <li class="layui-nav-item "><a href="/">主页</a></li>
         <li class="layui-nav-item" id="b"><a href="/board">板块</a></li>
-        <li class="layui-nav-item"><a href="/">帮助</a> </li>
+        <li class="layui-nav-item"><a href="/">帮助</a> <dl class="layui-nav-child">
+            <dd><a>管理员QQ：1234567</a> </dd>
+            <dd><a href="http://www.baidu.com">百度一下</a> </dd>
+        </dl></li>
         <%--判断用户是否登录--%>
         <c:if test="${empty user}">
             <li class="layui-nav-item" style="float: right"><a href="/user/register">注册</a></li>
@@ -27,7 +23,7 @@
                 <a href=""><i class="layui-icon layui-icon-username">&nbsp;</i>${user.userName}</a>
             <dl class="layui-nav-child">
                 <dd><a href="/user/detail/${user.userId}">个人中心</a> </dd>
-                <dd><a href="javascript:signout_confirm()">退出</a> </dd>
+                <dd><a href="javascript:signout_confirm()">注销</a> </dd>
             </dl>
             </li>
 

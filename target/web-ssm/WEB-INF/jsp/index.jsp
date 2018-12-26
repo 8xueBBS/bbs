@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 98223
-  Date: 2018/12/23
-  Time: 16：56
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -16,7 +9,7 @@
 <script src="../../statics/layui.js"></script>
 <html>
 <head>
-    <title>欢迎来到我的BBS论坛！</title>
+    <title>欢迎来到八雪的BBS论坛！</title>
 </head>
 <body>
 <%@include file="header.jsp"%>
@@ -27,9 +20,7 @@
     </fieldset>
     <div class="layui-anim layui-anim-up">
         <span class="layui-breadcrumb" lay-separator="/">
-            <a href="">娱乐</a> <a href="">八卦</a>
-            <a href="">体育</a> <a href="">搞笑</a> <a href="">视频</a>
-            <a href="">游戏</a> <a href="">综艺</a>
+            <a href="">全部</a> <a href="">精品</a>
         </span>
     </div>
     <div style="margin-top: 15px;width: 850px;">
@@ -99,10 +90,13 @@
                 </fieldset>
             </div>
         </div>
+        <button id="new" class="layui-btn  layui-btn-fluid">
+            <i class="layui-icon">&#xe608;</i> 发帖
+        </button>
         <div class="layui-col-md3">
             <div class="grid-demo">
                 <fieldset class="layui-elem-field" >
-                    <legend>论坛用户</legend>
+                    <legend>论坛成员 </legend>
                     <div class="layui-field-box"style="height: 300px">
                         <c:forEach items="${recentUser}" var="r">
                             <div style="width: 60px ;height: 70px;float: left ;margin-right: 15px ;margin-bottom: 15px">
@@ -114,9 +108,6 @@
                 </fieldset>
             </div>
             <br/>
-            <button id="new" class="layui-btn  layui-btn-fluid">
-                <i class="layui-icon">&#xe608;</i> 发帖
-            </button>
             <br/>
             <br/>
             <div class="grid-demo">
