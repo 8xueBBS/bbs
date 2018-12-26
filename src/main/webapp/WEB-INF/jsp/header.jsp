@@ -10,7 +10,7 @@
         <li class="layui-nav-item" id="b"><a href="/board">板块</a></li>
         <li class="layui-nav-item"><a href="/">帮助</a> <dl class="layui-nav-child">
             <dd><a>管理员QQ：1234567</a> </dd>
-            <dd><a>自行百度</a> </dd>
+            <dd><a href="http://www.baidu.com">百度一下</a> </dd>
         </dl></li>
         <%--判断用户是否登录--%>
         <c:if test="${empty user}">
