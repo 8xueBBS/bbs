@@ -52,20 +52,29 @@
                 <td>${list.topicViews}</td>
                 <td><fmt:formatDate value="${list.lastPost}" type="both" dateStyle="medium" timeStyle="medium"/></td>
                 <td>
-                    <form action="/setTop" method="post" style="width:50px;">
+                    <form action="/setTop" method="post" style="width:100px;">
                         <input type="hidden" name="_method" value="POST">
                         <input type="hidden" name="topicId" value="${list.topicId}">
-                        <input type="submit" class="layui-btn-xs layui-btn" value="置顶">
+                        <input type="submit" class="layui-btn-xs layui-btn" value="&置&nbsp;&nbsp;&nbsp;&nbsp;顶">
                     </form>
-                    <form action="/updateTopic" method="post" style="width:50px;">
+                    <c:if test="${list.digest==0}">
+                    <form action="/updateTopic" method="post" style="width:100px;">
                         <input type="hidden" name="_method" value="POST">
                         <input type="hidden" name="topicId" value="${list.topicId}">
-                        <input type="submit" class="layui-btn-xs layui-btn" value="加精">
+                        <input type="submit" class="layui-btn-xs layui-btn" value="&加&nbsp;&nbsp;&nbsp;&nbsp;精">
                     </form>
-                    <form action="/deleteTopic" method="post" style="width:50px;">
+                    </c:if>
+                    <c:if test="${list.digest==1}">
+                        <form action="/reupdateTopic" method="post" style="width:100px;">
+                            <input type="hidden" name="_method" value="POST">
+                            <input type="hidden" name="topicId" value="${list.topicId}">
+                            <input type="submit" class="layui-btn-xs layui-btn" value="取消加精">
+                        </form>
+                    </c:if>
+                    <form action="/deleteTopic" method="post" style="width:100px;">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="topicId" value="${list.topicId}">
-                        <input type="submit" class="layui-btn-xs layui-btn" value="删除">
+                        <input type="submit" class="layui-btn-xs layui-btn" value="删&nbsp;&nbsp;&nbsp;&nbsp;除">
                     </form>
                 </td>
             </tr>
