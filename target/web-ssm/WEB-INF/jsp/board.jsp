@@ -22,9 +22,8 @@
     </fieldset>
     <div class="layui-anim layui-anim-up">
         <span class="layui-breadcrumb" lay-separator="/">
-            <a href="">娱乐</a> <a href="">八卦</a>
-            <a href="">体育</a> <a href="">搞笑</a> <a href="">视频</a>
-            <a href="">游戏</a> <a href="">综艺</a>
+            <a href="/board/1">生活</a> <a href="/board/2">情感</a>
+            <a href="/board/3">大学</a> <a href="/board/4">旅游</a> <a href="/board/5">美食</a>
         </span>
     </div>
     <div style="height: 50px"></div>
@@ -37,7 +36,7 @@
 
             <c:forEach items="${boardReList}" var="b">
                 <tr>
-                    <td class="name"><p><a href="/board/${b.boardId}">${b.boardName}</a><br>版主：<a class="notabs" href="" target="_blank" c="1">${b.userName}</a><br>${b.boardDesc}</p></td>
+                    <td class="name"><p><a href="/board/${b.boardId}">${b.boardName}</a><br>${b.boardDesc}</p></td>
                     <td class="num"><var>${b.topicNum}</var></td>
 
                 </tr>

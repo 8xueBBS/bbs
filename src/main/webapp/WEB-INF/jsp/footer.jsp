@@ -60,9 +60,9 @@ a{
         <br/><br/>
     </div>
     <div class="info">
-        <p style="text-align: left;font-size: 16px;">统计信息</p>
+        <p style="text-align: left;font-size: 16px;">管理员：</p>
         <ul >
-            <li>会员数: ${userNum}</li>
+            <li><a href="/user/detail/1">admin</a> </li>
         </ul>
     </div>
     <div class="info">

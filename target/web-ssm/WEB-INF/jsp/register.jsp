@@ -15,7 +15,7 @@
 </head>
 <body>
 <%@include file="header.jsp"%>
-<div style="background-image: url(../../userPic/backg6.jpg);background-size: 100% 100%;">
+<div style="background-image: url(../../userPic/background2.jpg);background-size: 100% 100%;">
 <div style="width: 500px;height: 600px;margin: 0 auto;">
     <div style="width: 500px; height: 100px"></div>
 <form class="layui-form" action="/registerPro" method="post">
