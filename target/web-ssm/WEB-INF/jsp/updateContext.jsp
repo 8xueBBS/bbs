@@ -18,7 +18,7 @@
 <div class="layui-container" style="height: 800px;">
     <div style="height: 50px"></div>
     <form class="layui-form"action="/updateContext" style="width: 800px;" method="post">
-        <input type="hidden" name="topicId" value="${topic.topicId}">
+        <input type="hidden" name="topicId" value="${topic.topicId}">0
         <input type="hidden" name="userId" value="${userId}">
         <div class="layui-form-item">
             <label class="layui-form-label">标题:</label>

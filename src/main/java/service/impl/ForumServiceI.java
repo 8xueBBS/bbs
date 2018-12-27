@@ -1,4 +1,5 @@
 package service.impl;
+
 import dao.*;
 import model.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +22,13 @@ public class ForumServiceI implements ForumService {
     private BoardMapper boardMapper;
     @Autowired
     private PostMapper postMapper;
-        @Autowired
-        private UserMapper userMapper;
-        @Autowired
-        private UserDetailedMapper userDetailedMapper;
-        public void addTopic(Topic topic) {
-            topicMapper.insertSelective(topic);
+    @Autowired
+    private UserMapper userMapper;
+    @Autowired
+    private UserDetailedMapper userDetailedMapper;
+
+    public void addTopic(Topic topic) {
+        topicMapper.insertSelective(topic);
         Board board = boardMapper.selectByPrimaryKey(topic.getBoardId());
         board.setTopicNum(board.getTopicNum() + 1);
         boardMapper.updateByPrimaryKeySelective(board);
@@ -37,8 +39,8 @@ public class ForumServiceI implements ForumService {
         //删除相关回复贴
         topicMapper.deleteByPrimaryKey(TopicId);
         List<Post> postList = postMapper.selectByTopicId(TopicId);
-        for (Post p:
-             postList) {
+        for (Post p :
+                postList) {
             postMapper.deleteByPrimaryKey(p.getPostId());
         }
         //论坛板块主题帖子数-1
@@ -121,14 +123,21 @@ public class ForumServiceI implements ForumService {
     }
 
     //管理员对帖子进行加精操作
-    public void updateTopic(int topicId){
+    public void updateTopic(int topicId) {
         Topic topic = topicMapper.selectByPrimaryKey(topicId);
         topic.setDigest(1);
         topicMapper.updateByPrimaryKeySelective(topic);
     }
 
+    //管理员对帖子进行取消加精操作
+    public void reupdateTopic(int topicId) {
+        Topic topic = topicMapper.selectByPrimaryKey(topicId);
+        topic.setDigest(0);
+        topicMapper.updateByPrimaryKeySelective(topic);
+    }
+
     //管理员对帖子进行置顶操作
-    public void setTop(int topicId){
+    public void setTop(int topicId) {
         Topic topic1 = topicMapper.selectByTop(1);
         topic1.setTop(0);
         topicMapper.updateByPrimaryKeySelective(topic1);
@@ -138,21 +147,20 @@ public class ForumServiceI implements ForumService {
     }
 
     //更新帖子内容
-    public void updateContext(int topicId,int userId,String title,String context){
+    public void updateContext(int topicId, int userId, String title, String context) {
         Topic topic = topicMapper.selectByPrimaryKey(topicId); //获取帖子
         topic.setTopicTitle(new EncodingTool().encodeStr(title));
         topicMapper.updateByPrimaryKeySelective(topic);
-        Post post = postMapper.getHostTopicInnerText(topicId,userId); //获取发帖人记录
-        if(post!=null){
-        post.setPostText(new EncodingTool().encodeStr(context));
+        Post post = postMapper.getHostTopicInnerText(topicId, userId); //获取发帖人记录
+        if (post != null) {
+            post.setPostText(new EncodingTool().encodeStr(context));
         }
         postMapper.updateByPrimaryKeySelective(post);
 
 
-
     }
 
-    public List<TopicRe> getAllTopic(){
+    public List<TopicRe> getAllTopic() {
         return topicMapper.getAllTopic();
     }
 

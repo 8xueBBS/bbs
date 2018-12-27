@@ -34,6 +34,8 @@ public interface ForumService {
 
     void updateTopic(int topicId);
 
+    void reupdateTopic(int topicId);
+
     void setTop(int topicId);
 
     void updateContext(int userId,int topicId,String text,String title);

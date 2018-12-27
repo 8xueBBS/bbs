@@ -114,8 +114,15 @@ public class ForumManageController {
         return "redirect:/admin";
     }
 
+    @RequestMapping(value = "/reupdateTopic",method = RequestMethod.POST)
+    @ApiOperation(value = "取消加精",httpMethod = "POST")
+    public String reupdateTopic(@RequestParam int topicId){
+        forumService.reupdateTopic(topicId);
+        return "redirect:/admin";
+    }
+
     @RequestMapping(value = "/setTop", method = RequestMethod.POST)
-    @ApiOperation(value = "加精帖子",httpMethod = "POST")
+    @ApiOperation(value = "置顶帖子",httpMethod = "POST")
     public String setTop(@RequestParam int topicId) {
         forumService.setTop(topicId);
         return "redirect:/admin";
