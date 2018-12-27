@@ -44,6 +44,9 @@
                     <c:if test="${list.digest==1}">
                         <span class="layui-badge">精</span>
                     </c:if>
+                    <c:if test="${list.top==1}">
+                        <span class="layui-badge">置顶</span>
+                    </c:if>
                 </td>
                 <td>${list.userName}
                     <br/>

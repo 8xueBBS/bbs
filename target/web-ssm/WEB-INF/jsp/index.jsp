@@ -90,9 +90,6 @@
                 </fieldset>
             </div>
         </div>
-        <button id="new" class="layui-btn  layui-btn-fluid">
-            <i class="layui-icon">&#xe608;</i> 发帖
-        </button>
         <div class="layui-col-md3">
             <div class="grid-demo">
                 <fieldset class="layui-elem-field" >
@@ -108,6 +105,9 @@
                 </fieldset>
             </div>
             <br/>
+            <button id="new" class="layui-btn  layui-btn-fluid">
+                <i class="layui-icon">&#xe608;</i> 发帖
+            </button>
             <br/>
             <br/>
             <div class="grid-demo">

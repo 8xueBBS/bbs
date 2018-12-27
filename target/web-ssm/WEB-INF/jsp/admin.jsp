@@ -44,6 +44,9 @@
                     <c:if test="${list.digest==1}">
                         <span class="layui-badge">精</span>
                     </c:if>
+                    <c:if test="${list.top==1}">
+                        <span class="layui-badge">置顶</span>
+                    </c:if>
                 </td>
                 <td>${list.userName}
                     <br/>
@@ -55,13 +58,13 @@
                     <form action="/setTop" method="post" style="width:100px;">
                         <input type="hidden" name="_method" value="POST">
                         <input type="hidden" name="topicId" value="${list.topicId}">
-                        <input type="submit" class="layui-btn-xs layui-btn" value="&置&nbsp;&nbsp;&nbsp;&nbsp;顶">
+                        <input type="submit" class="layui-btn-xs layui-btn" value="置&nbsp;&nbsp;&nbsp;&nbsp;顶">
                     </form>
                     <c:if test="${list.digest==0}">
                     <form action="/updateTopic" method="post" style="width:100px;">
                         <input type="hidden" name="_method" value="POST">
                         <input type="hidden" name="topicId" value="${list.topicId}">
-                        <input type="submit" class="layui-btn-xs layui-btn" value="&加&nbsp;&nbsp;&nbsp;&nbsp;精">
+                        <input type="submit" class="layui-btn-xs layui-btn" value="加&nbsp;&nbsp;&nbsp;&nbsp;精">
                     </form>
                     </c:if>
                     <c:if test="${list.digest==1}">
