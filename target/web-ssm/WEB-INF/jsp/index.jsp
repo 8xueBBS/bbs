@@ -90,26 +90,7 @@
                 </fieldset>
             </div>
         </div>
-        <button id="new" class="layui-btn  layui-btn-fluid">
-            <i class="layui-icon">&#xe608;</i> 发帖
-        </button>
         <div class="layui-col-md3">
-            <div class="grid-demo">
-                <fieldset class="layui-elem-field" >
-                    <legend>论坛成员 </legend>
-                    <div class="layui-field-box"style="height: 300px">
-                        <c:forEach items="${recentUser}" var="r">
-                            <div style="width: 60px ;height: 70px;float: left ;margin-right: 15px ;margin-bottom: 15px">
-                                <img src="${r.imagePath}" onerror=this.src="/userPic/pic.jpg" style="width: 65px; height: 65px" >
-                                <a align="center" href="/user/detail/${r.userId}"><p align="center">${r.userName}</p></a>
-                            </div>
-                        </c:forEach>
-                    </div>
-                </fieldset>
-            </div>
-            <br/>
-            <br/>
-            <br/>
             <div class="grid-demo">
                 <fieldset class="layui-elem-field" >
                     <legend>论坛公告</legend>
@@ -121,6 +102,28 @@
                     </div>
                 </fieldset>
             </div>
+            <br/>
+            <br/>
+            <div class="grid-demo">
+                <fieldset class="layui-elem-field" >
+                    <legend>论坛成员： ${userNum} </legend>
+                    <div class="layui-field-box"style="height: 300px">
+                        <c:forEach items="${recentUser}" var="r">
+                            <div style="width: 60px ;height: 70px;float: left ;margin-right: 15px ;margin-bottom: 15px">
+                                <img src="${r.imagePath}" onerror=this.src="/userPic/pic.jpg" style="width: 65px; height: 65px" >
+                                <a align="center" href="/user/detail/${r.userId}"><p align="center">${r.userName}</p></a>
+                            </div>
+                        </c:forEach>
+                    </div>
+                </fieldset>
+            </div>
+            <br/>
+            <button id="new" class="layui-btn  layui-btn-fluid">
+                <i class="layui-icon">&#xe608;</i> 发帖
+            </button>
+            <br/>
+            <br/>
+
 
         </div>
     </div>

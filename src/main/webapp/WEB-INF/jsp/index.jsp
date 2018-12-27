@@ -93,7 +93,20 @@
         <div class="layui-col-md3">
             <div class="grid-demo">
                 <fieldset class="layui-elem-field" >
-                    <legend>论坛成员 </legend>
+                    <legend>论坛公告</legend>
+                    <div class="layui-field-box"style="height: 400px">
+                        本论坛秉正公平公正公开的原则，所有用户都可以畅所欲言。但同时管理员会高强度监督用户发言。
+                        请各用户注意自己的言行举止。希望大家能够给予好评。
+
+
+                    </div>
+                </fieldset>
+            </div>
+            <br/>
+            <br/>
+            <div class="grid-demo">
+                <fieldset class="layui-elem-field" >
+                    <legend>论坛成员： ${userNum} </legend>
                     <div class="layui-field-box"style="height: 300px">
                         <c:forEach items="${recentUser}" var="r">
                             <div style="width: 60px ;height: 70px;float: left ;margin-right: 15px ;margin-bottom: 15px">
@@ -110,17 +123,7 @@
             </button>
             <br/>
             <br/>
-            <div class="grid-demo">
-                <fieldset class="layui-elem-field" >
-                    <legend>论坛公告</legend>
-                    <div class="layui-field-box"style="height: 400px">
-                        本论坛秉正公平公正公开的原则，所有用户都可以畅所欲言。但同时管理员会高强度监督用户发言。
-                        请各用户注意自己的言行举止。希望大家能够给予好评。
 
-
-                    </div>
-                </fieldset>
-            </div>
 
         </div>
     </div>
