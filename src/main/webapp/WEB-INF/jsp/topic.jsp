@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 98223
-  Date: 2018/12/23
-  Time: 19:37
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -93,7 +86,7 @@
                         回复于：<fmt:formatDate value="${p.createTime}" type="both" dateStyle="medium" timeStyle="medium"/>
                     </blockquote>
                        &nbsp;&nbsp; ${p.postText}
-                    <c:if test="${user.userType==2}">
+                    <c:if test="${user.userType==2||host.userId==user.userId||p.userId==user.userId}">
                         <form action="/deletePost" method="post" style="position:absolute;right:0px;bottom:25px;width:50px;">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="postId"value="${p.postId}">
